@@ -8,16 +8,16 @@ exports.up = function(knex) {
       .references("user_id")
       .inTable("users");
     table
-      .float("amount", 8, 1)
-      .notNullable()
-      .defaultTo(0)
-      .unsigned();
-
-    table
       .string("transaction_type", 3)
       .notNullable()
       .references("abbrev")
       .inTable("transaction_types");
+
+    table
+      .float("amount", 8, 1)
+      .notNullable()
+      .defaultTo(0)
+      .unsigned();
 
     table.datetime("trans_datetime").defaultTo(knex.fn.now());
     table.timestamps(true, true);

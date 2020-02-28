@@ -5,8 +5,8 @@ exports.seed = function(knex) {
     .then(function() {
       // Inserts seed entries
       return knex("transaction_links").insert([
-        { payer_trans_id: 5, payee_trans_id: 4 },
-        { payer_trans_id: 6, payee_trans_id: 7 }
+        { link_id: 1, payer_trans_id: 5, payee_trans_id: 4 },
+        { link_id: 2, payer_trans_id: 6, payee_trans_id: 7 }
       ]);
     });
 };
