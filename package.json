@@ -1,0 +1,35 @@
+{
+  "name": "codetest_paymentserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node --presets babel-preset-env",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cch01/codeTest_PaymentServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cch01/codeTest_PaymentServer/issues"
+  },
+  "homepage": "https://github.com/cch01/codeTest_PaymentServer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inpm": "^0.1.0",
+    "install": "^0.13.0",
+    "knex": "^0.20.10",
+    "morgan": "^1.9.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.2"
+  }
+}
