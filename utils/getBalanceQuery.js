@@ -9,7 +9,9 @@ export default async newTransaction => {
       (SELECT user_id, MAX(transaction_id) AS max_trans_id FROM transactions GROUP BY user_id)
       AS t2
       ON t1.transaction_id = t2.max_trans_id 
-      where t1.user_id = ${newTransaction.payer_user_id} or t2.user_id = ${newTransaction.payee_user_id}  ORDER BY t1.user_id
+      where t1.user_id = ${newTransaction.payer_user_id} 
+      OR t2.user_id = ${newTransaction.payee_user_id}
+      ORDER BY t1.user_id
     `
     )
 

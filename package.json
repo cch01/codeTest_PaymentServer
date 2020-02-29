@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cch01/codeTest_PaymentServer#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "inpm": "^0.1.0",
     "install": "^0.13.0",
