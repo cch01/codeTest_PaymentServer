@@ -1,12 +1,13 @@
 import express from "express";
 import getUsers from "./apis/getUsers";
 import getTransactions from "./apis/getTransactions";
-//import newTransaction from "./apis/postTransaction";
+import postTransaction from "./apis/postTransaction";
+import verifyTrasaction from "./utils/verifyTransaction";
 
 const router = express.Router();
 
 router.get("/api/get/users", getUsers);
 router.get("/api/get/transactions", getTransactions);
-//router.post("/api/post/transaction", postTransaction);
+router.post("/api/post/transaction", verifyTrasaction, postTransaction);
 
 export default router;

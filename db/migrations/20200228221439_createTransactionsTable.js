@@ -19,9 +19,15 @@ exports.up = function(knex) {
       .defaultTo(0)
       .unsigned();
 
-    table.datetime("trans_datetime").defaultTo(knex.fn.now());
+    table
+      .float("balance", 8, 1)
+      .notNullable()
+      .defaultTo(0)
+      .unsigned();
+
+    table.datetime("trans_dateTime").defaultTo(knex.fn.now());
     table.timestamps(true, true);
-    table.index(["user_id", "transaction_type"]);
+    table.index(["user_id"]);
   });
 };
 exports.down = function(knex) {
