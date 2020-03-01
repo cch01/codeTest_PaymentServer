@@ -1,6 +1,7 @@
 import knex from "../db/knex";
 
 export default async (newTransaction, payerBalance, payeeBalance) => {
+
   let payerTransId, payeeTransId;
 
   await knex("transactions")

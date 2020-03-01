@@ -3,8 +3,11 @@ import transLinkInsertQuery from "../utils/transLinkInsertQuery";
 import transBalanceQuery from "../utils/transBalanceQuery";
 
 export default (req, res) => {
+
   let payerObj, payeeObj, payer_trans_id, payee_trans_id;
+
   console.log("Requested post: " + req.newTransaction);
+
   transBalanceQuery(req.newTransaction)
     .then(userObjs => {
       payerObj = userObjs[0];
