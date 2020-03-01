@@ -26,7 +26,6 @@ exports.up = function(knex) {
       .unsigned();
 
     table.datetime("trans_dateTime").defaultTo(knex.fn.now());
-    table.timestamps(true, true);
     table.index(["user_id"]);
   });
 };

@@ -13,7 +13,7 @@ exports.up = function(knex) {
       .notNullable()
       .references("transaction_id")
       .inTable("transactions");
-    table.timestamps(true, true);
+    table.timestamp("created_at").defaultTo(knex.fn.now());
   });
 };
 

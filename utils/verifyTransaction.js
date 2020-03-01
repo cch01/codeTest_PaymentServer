@@ -7,7 +7,7 @@ export default (req, res, next) => {
     typeof req.newTransaction === "undefined" ||
     req.newTransaction.payer_user_id === req.newTransaction.payee_user_id
   )
-    return res.status(400).send("Please provide transaction data");
+    return res.status(400).send("Please provide correct transaction data");
 
   const { error } = transactionSchema.validate(req.newTransaction);
 
@@ -16,7 +16,7 @@ export default (req, res, next) => {
     return res
       .status(400)
       .send(
-        "Transaction object not match. Please provide correct transaction data"
+        "Transaction object not match schema. Please provide correct transaction data"
       );
   }
   console.log("Transaction verification successed");

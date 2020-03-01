@@ -6,7 +6,7 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     table.string("abbrev", 3).unique();
-    table.timestamps(true, true);
+    table.timestamp("created_at").defaultTo(knex.fn.now());
   });
 };
 
